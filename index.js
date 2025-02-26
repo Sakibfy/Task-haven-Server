@@ -9,8 +9,9 @@ const { MongoClient, ServerApiVersion, ObjectId,  } = require('mongodb');
 app.use(cors({
   origin: ['http://localhost:5173',
     'http://localhost:5174',
-    'https://strong-fitness-21629.firebaseapp.com',
-    'https://strong-fitness-21629.web.app'
+    'https://task-haven-6fa59.web.app',
+    'https://task-haven-6fa59.firebaseapp.com'
+    
   ],
   credentials: true
 }));
@@ -30,8 +31,7 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    // Connect the client to the server	(optional starting in v4.7)
-    // await client.connect();
+    // Connect the client to the server	(optional starting in v4.
 
     
 const usersCollection = client.db("TaskDB").collection("users");
@@ -120,8 +120,8 @@ app.put("/Tasks/:id", async (req, res) => {
   }
 });
     // Send a ping to confirm a successful connection
-    await client.db("admin").command({ ping: 1 });
-    console.log("sakib runing");
+    // await client.db("admin").command({ ping: 1 });
+    // console.log("sakib runing");
   } finally {
     // Ensures that the client will close when you finish/error
     // await client.close();
@@ -136,7 +136,7 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-  res.send('asasasasas World!')
+  res.send('hello World!')
 })
 
 app.listen(port, () => {
